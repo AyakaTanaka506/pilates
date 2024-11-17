@@ -1,0 +1,658 @@
+@charset "UTF-8";
+
+/* 共通部分 ------------------*/
+body {
+  color: #413E3E;
+  font-size: 20px;
+  font-family: "Noto Sans JP", serif;
+  line-height: 1.75;
+  letter-spacing: 0.07em;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+/* 横幅 */
+section:not(.first-view, .faq) {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 4%;
+}
+
+/* 背景 */
+.bg-color {
+  background-color: #F6F4EE;
+}
+
+.bg-gradation {
+  background-image: linear-gradient(45deg,#8DCBE2,#D5A8C9);
+}
+
+/* フォント */
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.marker {
+  background: linear-gradient(transparent 50%, #E9D3E3 50%);
+}
+
+/* レスポンシブ */
+.sp-bl {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+.pc-bl {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.tab-bl {
+  @media (min-width: 970px) {
+    display: none;
+  }
+}
+
+/* フローティングバナー */
+.floating-banner {
+  position: fixed;
+  z-index: 9999;
+  bottom: 20px;
+  right: 10px;
+  width: min(27vw, 390px);
+}
+.floating-banner:hover {
+  opacity: 0.8;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* ファーストビュー */
+.first-view img {
+  width: 100%;
+}
+
+/* イントロ */
+.sub-title1, .sub-title2 {
+  position: relative;
+  font-size: 32px;
+  line-height: normal;
+}
+
+.sub-title1 {
+  padding: 0 15px;
+  border-bottom: 2px solid #6A6A6A;
+  left: min(11vw, 140px);
+}
+.sub-title1:before {
+  position: absolute;
+  top: 100%;
+  left: 52%;
+  transform: translateX(-50%) skew(45deg);
+  height: 25px;
+  width: 30px;
+  border-left: 2px solid #6A6A6A;
+  background-color: white;
+  content: "";
+}
+
+.intro h2 {
+  margin-top: 20px;
+}
+
+.troubles {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 90%;
+  padding: 50px 0;
+  margin: 0 auto;
+}
+
+.trouble-text {
+  margin-bottom: 60px;
+}
+
+.trouble-text span {
+  font-size: 28px;
+  line-height: auto;
+  padding: 0 5px;
+  margin: 0 3px;
+  color: #FFFFFF;
+  background-color: #413E3E;
+}
+
+@media (max-width: 1080px) {
+  .troubles {
+    display: block;
+    text-align: center;
+  }
+}
+
+.bg-circle-blue, .bg-circle-orange, .bg-circle-pink {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;  
+  z-index: -100;
+  position: absolute;
+}
+
+.bg-circle-blue {
+  background: #8DCBE2;
+  opacity: 0.6;
+  height: 230px;
+  width: 230px;
+  -ms-filter: blur(200px);
+  filter: blur(60px);
+
+  top: 30px;
+  left: -5vw;
+}
+
+.bg-circle-orange {
+  background: #BFAC8C;
+  opacity: 0.4;
+  height: 210px;
+  width: 210px;
+  -ms-filter: blur(100px);
+  filter: blur(70px);
+
+  top: -200px;
+  right: max(50px, 1vw);
+}
+
+.bg-circle-pink {
+  background: #D5A8C9;
+  opacity: 0.6;
+  height: 280px;
+  width: 280px;
+  -ms-filter: blur(180px);
+  filter: blur(70px);
+
+  top: 30px;
+  right: -5vw;
+}
+
+.arrow {
+  display: block;
+  margin: 0 auto;
+}
+
+.intro-catch-copy {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.intro-catch-copy p {
+  font-family:  "Noto Serif JP", serif;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.accent {
+  font-size: 44px;
+  color: #A9874F;
+}
+
+.intro-text {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.intro-text img {
+  width: 30%;
+  min-width: 270px;
+}
+
+.intro-text p {
+  width: 60%;
+  line-height: 2;
+}
+
+/* cta -------------------------*/
+.cta {
+  text-align: center;
+}
+
+.cta img {
+  width: 85%;
+  padding-bottom: 100px;
+}
+
+/* ctaボタン */
+.entry-button {
+  display: inline-block;
+  padding: 15px 10px;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, #00C29C 0%, #008C7B 100%);
+  color: #FFFFFF;
+  font-size: 28px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 4px 1px rgba(2, 87, 77, 0.5);
+}
+.entry-button span::after {
+  content: ">";
+  padding-left: 15px;
+}
+.entry-button span {
+  padding: 10px 25px;
+  border: 2px solid #FFFFFF;
+  border-radius: 50px;
+}
+
+.entry-button:hover {
+  opacity: 0.8;
+}
+
+/* 選ばれる理由 -----------------*/
+.reason-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.reason-text {
+  padding-right: 30px;
+}
+
+.reason-title {
+  font-family: "Noto Serif JP", serif;
+  font-size: 30px;
+}
+.reason-title span {
+  color: #A9874F;
+}
+.reason-title:before {
+  content: "";
+  display: inline-block;
+  width: 78px;
+  height: 78px;
+  background-size: contain;
+  vertical-align: middle;
+}
+.reason1::before {
+  background-image: url("../images/reaosn-title1.png");
+}
+.reason2::before {
+  background-image: url("../images/reaosn-title2.png");
+}
+.reason3::before {
+  background-image: url("../images/reaosn-title3.png");
+}
+.reason4::before {
+  background-image: url("../images/reaosn-title4.png");
+}
+
+.reason-content img {
+  width: 35%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.reason-text p {
+  padding-left: 78px;
+}
+
+/* ピラティスの効果 --------------*/
+.merit {
+  padding: 100px 0;
+}
+.merit h2 {
+  color: #FFFFFF;
+}
+
+.merit-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.merit-card {
+  width: 32%;
+  max-width: 325px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.merit-card h3 {
+  display: inline;
+  padding: 7px 10px;
+  border-radius: 50px;
+  border: 3px solid #D5A8C9;
+}
+
+.merit-card p {
+  text-align: left;
+  padding-top: 20px;
+}
+
+@media (max-width: 1000px) and (min-width: 768px) {
+  .merit-card {
+    padding: 10px;
+  }
+  .merit-card h3 {
+    font-size: 18px;
+    padding: 5px 7px;
+  }
+  .merit-card p {
+    font-size: 16px;
+  }
+}
+
+/* 体験の流れ ---------------*/
+.step-container {
+  width: 85%;
+  margin: 0 auto;
+
+  @media (max-width: 1060px) {
+    width: 100%;
+  }
+}
+
+.step-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.step-title {
+  display: flex;
+  min-width: 290px;
+}
+.step-title img {
+  width: 80px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+.step-content p {
+  width: fit-content;
+}
+
+/* お客様の声 -------------*/
+.voice-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.voice-card {
+  text-align: center;
+  width: 300px;
+  padding: 20px 15px;
+  border-radius: 0 30px 0 30px;
+  border: 2px solid #A9874F;
+  margin-top: 50px;
+}
+
+.voice-card h3 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 22px;
+  font-weight: normal;
+  border-bottom: dotted 4px #A9874F;
+}
+
+.voice-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.voice-text {
+  text-align: left;
+  line-height: normal;
+}
+
+
+/* よくある質問 ---------------------------------*/
+.faq-back {
+  position: relative;
+  padding: 100px 0;
+}
+
+.faq-back-image {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  margin: auto;
+  background: #C5E4F0;
+  clip-path: polygon(0 0, 100% 35%, 100% 100%, 0 65%);
+  z-index: -10;
+}
+
+.faq {
+  width: min(70vw, 960px);
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: #FCFAF2;
+  padding: 35px 45px;
+}
+
+.faq-list dl {
+  padding: 20px 0;
+  margin-left: 32px;
+}
+
+.faq-answer {
+  padding-top: 10px;
+}
+
+.faq-question::before, .faq-answer::before {
+  font-family: "Baloo Tamma 2", serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 0;
+  padding-right: 10px;
+  margin-left: -32px;
+  vertical-align: middle;
+}
+
+.faq-question::before {
+  content: "Q";
+  color: #D5A8C9;
+}
+
+.faq-answer::before {
+  content: "A";
+  color: #8DCBE2;
+  padding-left: 3px;
+}
+
+
+/* スタジオ情報 ---------------*/
+.info-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.info-text {
+  padding-right: 30px;
+}
+
+.info-text dd {
+ padding: 10px 0 30px;
+}
+
+
+/* フッター -------------------*/
+footer {
+  background-color: #D5A8C9;
+  padding: 15px min(11vw, 100px);
+}
+
+.company-info {
+  display: flex;
+  justify-content: end;
+}
+.company-info li {
+  list-style-type: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding-left: 25px;
+}
+.company-info a:hover {
+  text-decoration: underline #FFFFFF;
+}
+
+
+/* sp ------------------------------------------------*/
+@media (max-width: 767px) {
+  /* 共通 */
+  body {
+    font-size: 16px;
+  }
+  section:not(.first-view, .faq) {
+    padding: 50px 4%;
+  }
+  h2 {
+    font-size: 28px;
+  }
+
+  /* フローティングバナー */
+  .floating-banner {
+    right: 0;
+    bottom: 0;
+    width: 210px;
+  }
+
+  /* お悩み -----------*/
+  .sub-title1, .sub-title2 {
+    font-size: 24px;
+    left: 0;
+  }
+  .troubles {
+    width: 100%;
+  }
+  .trouble-text {
+    margin-bottom: 40px;
+  }
+  .trouble-text span {
+    font-size: 20px;
+  }
+  .bg-circle-blue {
+    width: 180px;
+    height: 180px;
+    filter: blur(50px);
+    top: 150px;
+    left: 0;
+  }
+  .bg-circle-orange {
+    width: 100px;
+    height: 100px;
+    filter: blur(40px);
+    top: -250px;
+    right: 0;
+  }
+  .bg-circle-pink {
+    width: 200px;
+    height: 200px;
+    filter: blur(60px);
+    top: -20px;
+    right: 0;
+  }
+
+  .intro-catch-copy p {
+    font-size: 28px;
+  }
+  .accent {
+    font-size: 40px;
+    line-height: normal;
+  }
+
+  .intro-text {
+    flex-direction: column;
+  }
+
+  .intro-text p, .intro-text img {
+    width: 100%;
+  }
+
+  /* cta --------------*/
+  .cta img {
+    padding-bottom: 50px;
+  }
+  .entry-button {
+    font-size: 22px;
+  }
+
+  /* 理由 --------*/
+  .reason-content {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .reason-title {
+    font-size: 20px;
+  }
+  .reason-title::before {
+    width: 55px;
+    height: 55px;
+  }
+  .reason-text, .reason-text p {
+    padding: 0;
+  }
+  .reason-content img {
+    width: 90%;
+    padding-top: 20px;
+  }
+
+  /* 効果 -------------*/
+  .merit-content {
+    flex-direction: column;
+  }
+  .merit-card {
+    width: 90%;
+    margin: 25px auto;
+  }
+
+  /* 流れ ----------*/
+  .step-content {
+    flex-direction: column;
+  }
+  .step-title {
+    padding-bottom: 20px;
+  }
+
+  /* FAQ */
+  .faq {
+    width: 90%;
+    padding: 35px 10px;
+  }
+
+  .faq-question::before, .faq-answer::before {
+    font-size: 22px !important;
+    margin-left: -26px;
+  }
+  .faq-answer::before {
+    padding-left: 1px;
+  }
+
+
+  /* info */
+  .info-container {
+    flex-direction: column;
+  }
+  .info-text {
+    text-align: center;
+  }
+  .info-container iframe {
+    width: 100%;
+  }
+
+}
